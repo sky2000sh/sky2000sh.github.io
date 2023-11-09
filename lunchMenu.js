@@ -1,5 +1,5 @@
 let mList, i, li, delBtn, existingMenu, toList, toDoList;
-let storageMenu, menuArr, menu, todayArray, todayMenu, menuList;
+let storageMenu, menuArr, menu, newMenu, todayArray, todayMenu, menuList;
 let yesterday = '';
 
 function pressKey(event) {
@@ -8,12 +8,12 @@ function pressKey(event) {
     }
 }
 
-if (localStorage.getItem("counter") == null) {
+if(localStorage.getItem("counter") == null) {
     localStorage.setItem("counter", '0');
     localStorage.setItem("restCounter", '0');
 }
 
-if (localStorage.getItem("mList") == null || localStorage.getItem("mList") == '') {
+if(localStorage.getItem("mList") == null || localStorage.getItem("mList") == '') {
     mList = []
     localStorage.setItem("mList", mList)
 } else {
@@ -36,7 +36,7 @@ if (localStorage.getItem("mList") == null || localStorage.getItem("mList") == ''
     }
 }
 
-if (localStorage.getItem("toList") == null || localStorage.getItem("toList") == '') {
+if(localStorage.getItem("toList") == null || localStorage.getItem("toList") == '') {
     toList = []
     localStorage.setItem("toList",toList)
 } else {
@@ -60,11 +60,12 @@ let n2 = parseInt(localStorage.getItem("restCounter"));
 function sortMenu() {
     menuArr = document.querySelectorAll(".menu_list li");
     menu = [];
-    if (menuArr.length >= 2) {
+    if(menuArr.length >= 2) {
         for(i = 0; i < menuArr.length; i++) {
             menu.push(menuArr[i].innerHTML);
         }
-        if (menu.includes(yesterday)) {
+
+        if(menu.includes(yesterday)) {
             todayArray = notYesterday(menu);
         } else {
             todayArray = menu;
@@ -102,6 +103,7 @@ function randomForMenu(todayArray) {
     // 오늘의 메뉴 리턴
     let rand = Math.random();
     let randint = Math.floor(rand * (todayArray.length));
+
     return todayArray[randint]
 }
 
@@ -113,11 +115,11 @@ function notYesterday(menu) {
 }
 
 function delToDo(delBtn) {
-    if (confirm("정말 삭제할까요?")) {
+    if(confirm("정말 삭제할까요?")) {
         localStorage.removeItem(delBtn.parentNode.className);
         delBtn.parentNode.parentNode.removeChild(delBtn.parentNode);
         
-        if (delBtn.parentNode.className.slice(0, 8) == 'menuList') {
+        if(delBtn.parentNode.className.slice(0, 8) == 'menuList') {
             localStorage.removeItem(delBtn.parentNode.className);
             idx = toList.indexOf(delBtn.parentNode.className);
  
@@ -147,12 +149,13 @@ function addMenu() {
         menu.push(menuArr[i].innerHTML.split('<')[0]);
         console.log('여기여기4 menu :', menu);
     }
+
     newMenu = document.querySelector('.input_menu').value;
 
-    if ( !menu.includes(newMenu) && newMenu != '' ) {
+    if( !menu.includes(newMenu) && newMenu != '' ) {
         li = document.createElement('li');
       
-        if (localStorage.getItem("restCounter") == null) {
+        if(localStorage.getItem("restCounter") == null) {
             localStorage.setItem("restCounter",0)
         }
 
@@ -176,15 +179,15 @@ function addMenu() {
         n2++;
         localStorage.setItem("restCounter", n2)
 
-    } else if (menu.includes(newMenu)) {
+    } else if(menu.includes(newMenu)) {
         alert('이미 존재하는 식당이에요')
     }
 
 }
 
 function allClear() {
-    if (confirm('모든 기록을 삭제할까요?')) {
-        if (localStorage.getItem("counter") != 0) {
+    if(confirm('모든 기록을 삭제할까요?')) {
+        if(localStorage.getItem("counter") != 0) {
             localStorage.clear();
             window.location.reload();
         }
@@ -194,9 +197,9 @@ function allClear() {
 function allRecordDel() {
      menuList = document.querySelector(".todo_list"); 
 
-     if (confirm('기록된 메뉴를 모두 삭제할까요?')) {
-        if ( localStorage.getItem("toList") != null) {
-            while (menuList.hasChildNodes()) {
+     if(confirm('기록된 메뉴를 모두 삭제할까요?')) {
+        if(localStorage.getItem("toList") != null) {
+            while( menuList.hasChildNodes() ) {
                 localStorage.removeItem("toList");
                 menuList.removeChild(menuList.firstChild); 
             }
