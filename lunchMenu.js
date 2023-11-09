@@ -18,7 +18,8 @@ if(localStorage.getItem("mList") == null || localStorage.getItem("mList") == '')
     localStorage.setItem("mList", mList)
 } else {
     mList = localStorage.getItem("mList");
-    mList = mList.split(',')
+    mList = mList.split(',');
+    
     for(i = 0; i < mList.length; i++) {
         storageMenu = localStorage.getItem(mList[i]);
     
@@ -28,7 +29,7 @@ if(localStorage.getItem("mList") == null || localStorage.getItem("mList") == '')
     
         delBtn = document.createElement('button');
         delBtn.innerHTML = 'x';
-        delBtn.setAttribute("onclick","delToDo(this);")
+        delBtn.setAttribute("onclick", "delToDo(this);")
         delBtn.className = "del_menu"
     
         existingMenu = document.querySelector('.menu_list');
@@ -156,18 +157,18 @@ function addMenu() {
         li = document.createElement('li');
       
         if(localStorage.getItem("restCounter") == null) {
-            localStorage.setItem("restCounter",0)
+            localStorage.setItem("restCounter", 0)
         }
 
         li.className = "rest" + n2;
         mList.push(li.className)
-        localStorage.setItem("mList" ,mList);
+        localStorage.setItem("mList", mList);
  
         li.innerHTML = newMenu;
        
         delBtn = document.createElement('button');
         delBtn.innerHTML = 'x';
-        delBtn.setAttribute("onclick","delToDo(this);")
+        delBtn.setAttribute("onclick", "delToDo(this);")
         delBtn.className = "del_menu"
         li.appendChild(delBtn);
 
