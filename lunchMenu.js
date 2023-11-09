@@ -1,4 +1,4 @@
-let mList, li, delBtn, existingMenu, toList, toDoList;
+let mList, i, li, delBtn, existingMenu, toList, toDoList;
 let storageMenu, menuArr, menu, todayArray, todayMenu, menuList;
 let yesterday = '';
 
