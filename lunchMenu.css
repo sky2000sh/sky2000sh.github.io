@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  
+}
+
+.header{
+    background: yellowgreen;
+    color: whitesmoke;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0 40px 0;
+}
+
+
+
+.add_todo{
+    width: 60%;
+    height: 30px;
+    margin: 20px auto 0 auto;
+    font-size: 20px;
+  
+}
+
+.title{
+    font-size: 30px;
+    display: block;
+    line-height: 40px;
+ 
+}
+
+.input_btn{
+    height: 30px;
+    width: 25px;
+    font-size: 20px;
+    position: relative;
+    top: -5px;
+ 
+}
+
+.content{
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+.todo_list{
+    width: 1200px;
+    padding: 0 10px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.todo_list > li {
+    width: 220px;
+    height: 30px;
+    line-height: 30px;
+    margin: 6px 8px;
+    background: beige;
+    color: slategray;
+    display: inline-flex;
+    padding: 0 16px;
+
+}
+
+.input_btn,
+.input_todo,
+.todo_list > li,
+.delBtn{
+    border-radius: 3px;
+    border: none;
+}
+
+
+.todo_list > li > button{
+    margin-left: auto;
+    width: 25px;
+    height: 28px;
+    font-size: 16px;
+    color: chocolate;
+    position: relative;
+    top: 1px;
+}
+
+
+
+.menu_list{
+    width: 600px;
+    display: block;
+}
+
+
+
+.menu_list > li{
+    float: left;
+    padding: 3px 6px;
+    width: 150px;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.menu_btn,
+.input_menu {
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px;
+}
+
+.menu_btn{
+    width: 25px;
+    color: gray;
+}
+
+.input_menu{
+    width: 180px;
+    margin-left: 20px;
+}
+
+.add_menu{
+    position: relative;
+    top: 74px;
+}
+
+.del_menu{
+    position: relative;
+    top: -2px;
+    right: -4px;
+    margin-left: auto;
+    border-radius: 2px;
+    border: none;
+    width: 12px;
+    height: 16px;
+}
+
+.clear_btn{
+    float: right;
+}
+
+.clear_btn{
+    padding: 0 10px;
+    height: 30px;
+    margin-right: 20px;
+    border: none;
+    color: gray;
+    display: block;
+    border-radius: 2px;
+}
+
+.del_menu{
+    color: gray;
+}
+
+.delRecord_btn{
+    float: right;
+    height: 30px;
+    margin-right: 20px;
+    border: none;
+    color: gray;
+    display: block;
+    border-radius: 2px;
+    padding: 0 10px;
+}

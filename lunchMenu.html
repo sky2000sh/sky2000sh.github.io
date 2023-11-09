@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>오늘의 메뉴</title>
+        <!-- <link rel="stylesheet" href="./lunchMenu.css"> -->
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="header">
+                <ul class="menu_list"></ul>
+                <div style="clear: both;"></div>
+
+                <div class="add_menu">
+                    <input type="text" class="input_menu" placeholder="메뉴를 입력하세요." onkeypress="pressKey(event);">
+                    <input type="button" class="menu_btn" value="추가" onclick="addMenu();">
+                    <!-- <button class="clear_btn" onclick="allClear();">reset</button> -->
+                </div>
+
+                <div class="container">
+                    <div class="add_todo todo">
+                        <h1 class="title">오늘의 메뉴
+                            <!-- <input class="input_btn" type="button" onclick="sortMenu();" value="GO!"> -->
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="content container">
+                <!-- <input type="button" class="delRecord_btn" onclick="allRecordDel()" value="기록 삭제"> -->
+                <ul class="todo_list todo"></ul>
+            </div>
+        </div>
+
+        <script src="./lunchMenu.js"></script>
+    </body>
+</html>
