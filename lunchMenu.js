@@ -15,7 +15,7 @@ if(localStorage.getItem("counter") == null) {
 
 if(localStorage.getItem("mList") == null || localStorage.getItem("mList") == '') {
     mList = []
-    localStorage.setItem("mList", mList)
+    localStorage.setItem("mList", mList);
 } else {
     mList = localStorage.getItem("mList");
     mList = mList.split(',');
@@ -25,12 +25,12 @@ if(localStorage.getItem("mList") == null || localStorage.getItem("mList") == '')
     
         li = document.createElement('li');
         li.innerHTML = storageMenu;
-        li.className = mList[i]
+        li.className = mList[i];
     
         delBtn = document.createElement('button');
         delBtn.innerHTML = 'x';
         delBtn.setAttribute("onclick", "delToDo(this);")
-        delBtn.className = "del_menu"
+        delBtn.className = "del_menu";
     
         existingMenu = document.querySelector('.menu_list');
         existingMenu.appendChild(li);
@@ -39,10 +39,10 @@ if(localStorage.getItem("mList") == null || localStorage.getItem("mList") == '')
 
 if(localStorage.getItem("toList") == null || localStorage.getItem("toList") == '') {
     toList = []
-    localStorage.setItem("toList",toList)
+    localStorage.setItem("toList",toList);
 } else {
     toList = localStorage.getItem("toList");
-    toList = toList.split(',')
+    toList = toList.split(',');
     for(i = 0; i < toList.length; i++) {
         storageMenu = localStorage.getItem(toList[i]);
         li = document.createElement('li');
@@ -82,7 +82,7 @@ function sortMenu() {
         li = document.createElement('li');
         li.innerHTML = month + "/" + day + "&nbsp&nbsp" + todayMenu;
         li.className = "menuList" + n;
-        toList.push(li.className)
+        toList.push(li.className);
         localStorage.setItem("toList", toList);
        
         menuList = li.innerHTML;
@@ -144,11 +144,7 @@ function addMenu() {
     menu = [];
 
     for(i = 0; i < menuArr.length; i++) {
-        console.log('여기여기1 :', menuArr);
-        console.log('여기여기2 :', menuArr[i].innerHTML);
-        console.log('여기여기3 :', menuArr[i].innerHTML.split('<')[0]);
         menu.push(menuArr[i].innerHTML.split('<')[0]);
-        console.log('여기여기4 menu :', menu);
     }
 
     newMenu = document.querySelector('.input_menu').value;
@@ -157,19 +153,19 @@ function addMenu() {
         li = document.createElement('li');
       
         if(localStorage.getItem("restCounter") == null) {
-            localStorage.setItem("restCounter", 0)
+            localStorage.setItem("restCounter", 0);
         }
 
         li.className = "rest" + n2;
-        mList.push(li.className)
+        mList.push(li.className);
         localStorage.setItem("mList", mList);
  
         li.innerHTML = newMenu;
        
         delBtn = document.createElement('button');
         delBtn.innerHTML = 'x';
-        delBtn.setAttribute("onclick", "delToDo(this);")
-        delBtn.className = "del_menu"
+        delBtn.setAttribute("onclick", "delToDo(this);");
+        delBtn.className = "del_menu";
         li.appendChild(delBtn);
 
         existingMenu = document.querySelector('.menu_list');
@@ -178,10 +174,10 @@ function addMenu() {
 
         localStorage.setItem("rest" + n2, li.innerHTML);
         n2++;
-        localStorage.setItem("restCounter", n2)
+        localStorage.setItem("restCounter", n2);
 
     } else if(menu.includes(newMenu)) {
-        alert('이미 존재하는 식당이에요')
+        alert('이미 존재하는 식당이에요');
     }
 
 }
